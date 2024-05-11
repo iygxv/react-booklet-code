@@ -4,14 +4,13 @@ import { Dayjs } from "dayjs";
 interface MonthCalendarProps extends CalendarProps {}
 
 function getAllDays(date: Dayjs) {
-  const daysInMonth = date.daysInMonth();
+  // const daysInMonth = date.daysInMonth();
   const startDate = date.startOf("month");
   const day = startDate.day();
 
   const daysInfo: Array<{ date: Dayjs; currentMonth: boolean }> = new Array(
     6 * 7
   );
-
   for (let i = 0; i < day; i++) {
     daysInfo[i] = {
       date: startDate.subtract(day - i, "day"),

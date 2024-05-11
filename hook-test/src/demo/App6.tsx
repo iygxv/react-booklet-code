@@ -28,10 +28,13 @@ function App() {
   }, []);
 
 
+  // 因为函数是引用类型，所以每次都会重新渲染。
+  // 所以使用 useCallback 包裹函数，这样就不会重新渲染。
   const bbbCallback = useCallback(() => {
     console.log("bbb callback");
   }, [])
 
+  // 
   const count2 = useMemo(() => {
     return count * 2
   }, [count])
